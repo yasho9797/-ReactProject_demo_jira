@@ -1,427 +1,3 @@
-
-// // import React from 'react';
-// // import { useParams } from 'react-router-dom';
-// // import { useSelector } from 'react-redux';
-// // import { Card } from '@mui/material';
-// // import AddTask from '../Components/AddTask'; 
-// // import AddItemToTask from './AddItemToTask';
-// // import React, { useState } from 'react';
-
-
-// // const DetailsProject = () => {
-// //     const { id } = useParams();
-
-// //     // שליפת הפרויקט מה-Store לפי ה-ID מה-URL
-// //     const project = useSelector(state => {
-// //         const list = state.project.projectsList || []; 
-// //         return list[id]; 
-// //     });
-
-// //         const [isEditOpen, setIsEditOpen] = useState(false);
-// //     const [taskToEdit, setTaskToEdit] = useState(null);
-
-// //     const handleEdit = (task) => {
-// //     setTaskToEdit(task); // שומרים את המשימה שרוצים לערוך
-// //     setIsEditOpen(true); // פותחים את המודאל
-
-// // };
-
-
-// //     // הגנה מפני קריסה בזמן טעינה או רענון
-// //     if (!project) {
-// //         return (
-// //             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
-// //                 <Card sx={{ p: 4, textAlign: 'center', maxWidth: '400px' }}>
-// //                     <h2 style={{ color: '#1976d2' }}>טוען נתונים...</h2>
-// //                     <p>הפרויקט לא נמצא או שהדף ברענון.</p>
-// //                 </Card>
-// //             </div>
-// //         );
-// //     }
-// // //     const handleEdit = (task) => {
-// // //     console.log("עריכת משימה:", task);
-// // // };
-
-
-// //     return (
-// //         <div style={{ width: '100vw', margin: '0', padding: '0', overflowX: 'hidden', direction: 'rtl' }}>
-
-// //             {/* כותרת הפרויקט העליונה */}
-// //             <div style={{ 
-// //                 width: '100%', backgroundColor: '#f0f4f8', padding: '1.5rem', 
-// //                 textAlign: 'center', fontWeight: 'bold', marginBottom: '15px',
-// //                 fontSize: '1.8rem', borderBottom: '2px solid #d1d9e6'
-// //             }}>
-// //                 פרויקט: {project.name}
-// //             </div>
-
-
-// //             {/* שורת התיבות (קנבן) */}
-// //             <div style={{ 
-// //                 display: 'flex', 
-// //                 width: '100%', 
-// //                 gap: '15px', 
-// //                 padding: '0 15px',
-// //                 boxSizing: 'border-box' 
-// //             }}>
-
-
-// //                  {/* תיבה 4 - בוצע */}
-// //                 <div style={columnStyle('#f3e5f5')}>
-// //                     <AddTask/>  
-// //                     <div style={labelStyle}>משימות שנבדקו</div>
-// //                 {project?.tasks?.done?.map((task) => (
-// //                 <AddItemToTask 
-// //                 key={task.id}
-// //                 task={task}
-// //                 column="done" />
-// //             ))}
-
-// //                 </div>
-// //                 {/* תיבה 3 - בדיקה */}
-// //                 <div style={columnStyle('#fff3e0')}>
-// //                     <AddTask />
-// //                     <div style={labelStyle}>מוכנות לבדיקה</div> 
-// //                         {project?.tasks?.testing?.map((task) => (
-
-// //                         <AddItemToTask key={task.id} task={task} column="testing"  />
-// //             ))}
-
-// //                     </div>
-// //                  {/* תיבה 2 - בביצוע */}
-// //                      <div style={columnStyle('#f3e5f5')}>
-// //                     <AddTask/> 
-// //                     <div style={labelStyle}>משימות בביצוע</div> 
-// //                 {project?.tasks?.doing?.map((task) => (
-// //                 <AddItemToTask key={task.id} task={task} column="doing" 
-// //                 />
-// //             ))}
-
-
-// //                 </div>
-
-// //                       {/* תיבה 1 - לביצוע */}
-// //                <div style={columnStyle('#f3e5f5')}>
-// //                     <AddTask/> 
-
-// //                      <div style={labelStyle}>משימות לביצוע</div>
-// //                 {project?.tasks?.todo?.map((task) => (
-// //                 <AddItemToTask key={task.id} task={task} column="todo" 
-// //               />
-// //             ))}
-
-// //                 </div>
-
-
-// //             </div>
-// //         </div>
-// //     );
-// // };
-
-// // // אובייקטי עיצוב לשימוש חוזר (כדי שהקוד יהיה נקי)
-// // const columnStyle = (bgColor) => ({
-// //     flex: '1', 
-// //     backgroundColor: bgColor, 
-// //     minHeight: '80vh', 
-// //     borderRadius: '20px', 
-// //     display: 'flex', 
-// //     flexDirection: 'column', 
-// //     alignItems: 'center', 
-// //     padding: '25px',
-// //     boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
-// //     border: '1px solid rgba(0,0,0,0.03)'
-// // });
-
-// // const labelStyle = {
-// //     marginTop: '15px', 
-// //     fontWeight: 'bold', 
-// //     fontSize: '1.1rem', 
-// //     color: '#333'
-// // };
-
-// // export default DetailsProject;
-
-
-
-
-
-
-// // import React, { useState } from 'react'; // ייבוא מאוחד
-// // import { useParams } from 'react-router-dom';
-// // import { useSelector } from 'react-redux';
-// // import { Card } from '@mui/material';
-// // import AddTask from '../Components/AddTask'; 
-// // import AddItemToTask from './AddItemToTask';
-
-// // const DetailsProject = () => {
-// //     const { id } = useParams();
-
-// //     const project = useSelector(state => {
-// //         const list = state.project.projectsList || []; 
-// //         return list[id]; 
-// //     });
-
-// //     const [isEditOpen, setIsEditOpen] = useState(false);
-// //     const [taskToEdit, setTaskToEdit] = useState(null);
-
-// //     const handleEdit = (task) => {
-// //         setTaskToEdit(task); 
-// //         setIsEditOpen(true); 
-// //     };
-
-// //     if (!project) {
-// //         return (
-// //             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
-// //                 <Card sx={{ p: 4, textAlign: 'center', maxWidth: '400px' }}>
-// //                     <h2 style={{ color: '#1976d2' }}>טוען נתונים...</h2>
-// //                     <p>הפרויקט לא נמצא או שהדף ברענון.</p>
-
-// //                 </Card>
-// //             </div>
-// //         );
-// //     }
-
-// //     return (
-// //         <div style={{ width: '100vw', margin: '0', padding: '0', overflowX: 'hidden', direction: 'rtl' }}>
-
-// //             <div style={{ 
-// //                 width: '100%', backgroundColor: '#f0f4f8', padding: '1.5rem', 
-// //                 textAlign: 'center', fontWeight: 'bold', marginBottom: '15px',
-// //                 fontSize: '1.8rem', borderBottom: '2px solid #d1d9e6'
-// //             }}>
-// //                 פרויקט: {project.name}
-
-// //             </div>
-
-// //             <div style={{ display: 'flex', width: '100%', gap: '15px', padding: '0 15px', boxSizing: 'border-box' }}>
-
-// //                 {/* טור בוצע */}
-// //                 <div style={columnStyle('#f3e5f5')}>
-// //                     <AddTask />  
-// //                     <div style={labelStyle}>משימות שנבדקו</div>
-// //                     {project?.tasks?.done?.map((task) => (
-// //                         <AddItemToTask key={task.id} task={task} column="done" onEdit={handleEdit} />
-// //                     ))}
-
-// //                 </div>
-
-// //                 {/* טור בדיקה */}
-// //                 <div style={columnStyle('#fff3e0')}>
-// //                     <AddTask />
-// //                     <div style={labelStyle}>מוכנות לבדיקה</div> 
-// //                     {project?.tasks?.testing?.map((task) => (
-// //                         <AddItemToTask key={task.id} task={task} column="testing" onEdit={handleEdit} />
-// //                     ))}
-// //                 </div>
-
-// //                 {/* טור בביצוע */}
-// //                 <div style={columnStyle('#e8f5e9')}>
-// //                     <AddTask /> 
-// //                     <div style={labelStyle}>משימות בביצוע</div> 
-// //                     {project?.tasks?.doing?.map((task) => (
-// //                         <AddItemToTask key={task.id} task={task} column="doing" onEdit={handleEdit} />
-// //                     ))}
-// //                 </div>
-
-// //                 {/* טור לביצוע */}
-// //                 <div style={columnStyle('#e3f2fd')}>
-// //                     <AddTask /> 
-// //                     <div style={labelStyle}>משימות לביצוע</div>
-// //                     {project?.tasks?.todo?.map((task) => (
-// //                         <AddItemToTask key={task.id} task={task} column="todo" onEdit={handleEdit} />
-// //                     ))}
-// //                 </div>
-// //             </div>
-
-// //             {/* חלון עריכה נסתר שקופץ רק כשצריך */}
-// //             {isEditOpen && (
-// //                 <AddTask 
-// //                     isEditMode={true}
-// //                     taskData={taskToEdit} 
-// //                     visible={isEditOpen} 
-// //                     onHide={() => {
-// //                         setIsEditOpen(false);
-// //                         setTaskToEdit(null);
-// //                     }} 
-// //                 />
-// //             )}
-// //         </div>
-// //     );
-// // };
-
-// // const columnStyle = (bgColor) => ({
-// //     flex: '1', backgroundColor: bgColor, minHeight: '80vh', borderRadius: '20px', 
-// //     display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '25px',
-// //     boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.03)'
-// // });
-
-// // const labelStyle = { marginTop: '15px', fontWeight: 'bold', fontSize: '1.1rem', color: '#333' };
-
-// // export default DetailsProject;
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import { useParams ,useNavigate } from 'react-router-dom';
-// import { useSelector ,useDispatch} from 'react-redux';
-// import { Card } from '@mui/material';
-// import { Button } from 'primereact/button';
-// import AddTask from '../Components/AddTask';
-// import AddItemToTask from './AddItemToTask';
-// import { deleteProject, updateProject } from './store/projectSlice';
-
-
-// const DetailsProject = () => {
-//     const { id } = useParams();
-
-//     const project = useSelector(state => {
-//         const list = state.project.projectsList || [];
-//         return list[id];
-//     });
-
-//     const [isEditOpen, setIsEditOpen] = useState(false);
-//     const [taskToEdit, setTaskToEdit] = useState(null);
-//     const dispatch = useDispatch();
-//     const navigate = useNavigate();
-
-//     const handleEditTask = (task) => {
-//         setTaskToEdit(task);
-//         setIsEditOpen(true);
-//     };
-
-    
-
-//     if (!project) {
-//         return (
-//             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
-//                 <Card sx={{ p: 4, textAlign: 'center', maxWidth: '400px' }}>
-//                     <h2 style={{ color: '#1976d2' }}>טוען נתונים...</h2>
-//                     <p>הפרויקט לא נמצא.</p>
-//                 </Card>
-//             </div>
-//         );
-//     }
-
-//     return (
-//         <div style={{ width: '100vw', margin: '0', padding: '0', overflowX: 'hidden', direction: 'rtl' }}>
-
-//             {/* כותרת הפרויקט - הכיתוב באמצע, הכפתורים בצד ימין */}
-//             <div style={{
-//                 width: '100%',
-//                 backgroundColor: '#f0f4f8',
-//                 padding: '1.5rem',
-//                 marginBottom: '20px',
-//                 borderBottom: '2px solid #d1d9e6',
-//                 display: 'flex',
-//                 justifyContent: 'center', // הכותרת תמיד באמצע
-//                 alignItems: 'center',
-//                 position: 'relative', // מאפשר לכפתורים "לצוף" בתוכו
-//                 boxSizing: 'border-box'
-//             }}>
-//                 {/* הכיתוב שמרכז העולם שלו הוא האמצע */}
-//                 <span style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>
-//                     פרויקט: {project.name}
-//                 </span>
-
-//                 {/* הכפתורים בצד ימין (Absolute) */}
-//                 <div style={{
-//                     position: 'absolute',
-//                     right: '20px', // נצמד לימין
-//                     display: 'flex',
-//                     gap: '10px'
-//                 }}>
-//                     <Button
-//                         icon="pi pi-pencil"
-//                         rounded text severity="info"
-//                         onClick={() => {
-//                             navigate(`/AddProject`, { state: { project, projectId: id, isEdit: true } });
-//                         }
-                            
-//                         }
-
-//                         style={{ backgroundColor: 'white', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
-//                     />
-//                     <Button
-//                         icon="pi pi-trash"
-//                         rounded text severity="danger"
-//                         onClick={() => {
-//                             dispatch(deleteProject(id));
-//                             navigate(-1);
-//                         }}
-//                         style={{ backgroundColor: 'white', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}
-//                     />
-//                 </div>
-//             </div>
-
-//             {/* לוח הקנבן */}
-//             <div style={{ display: 'flex', width: '100%', gap: '15px', padding: '0 15px', boxSizing: 'border-box' }}>
-
-//                 <div style={columnStyle('#f3e5f5')}>
-//                     <AddTask />
-//                     <div style={labelStyle}>משימות שנבדקו</div>
-//                     {project.tasks?.done?.map((task) => (
-//                         <AddItemToTask key={task.id} task={task} column="done" onEdit={handleEditTask} />
-//                     ))}
-//                 </div>
-
-//                 <div style={columnStyle('#fff3e0')}>
-//                     <AddTask />
-//                     <div style={labelStyle}>מוכנות לבדיקה</div>
-//                     {project.tasks?.testing?.map((task) => (
-//                         <AddItemToTask key={task.id} task={task} column="testing" onEdit={handleEditTask} />
-//                     ))}
-//                 </div>
-
-//                 <div style={columnStyle('#e8f5e9')}>
-//                     <AddTask />
-//                     <div style={labelStyle}>משימות בביצוע</div>
-//                     {project.tasks?.doing?.map((task) => (
-//                         <AddItemToTask key={task.id} task={task} column="doing" onEdit={handleEditTask} />
-//                     ))}
-//                 </div>
-
-//                 <div style={columnStyle('#e3f2fd')}>
-//                     <AddTask />
-//                     <div style={labelStyle}>משימות לביצוע</div>
-//                     {project.tasks?.todo?.map((task) => (
-//                         <AddItemToTask key={task.id} task={task} column="todo" onEdit={handleEditTask} />
-//                     ))}
-//                 </div>
-//             </div>
-
-//             {isEditOpen && (
-//                 <AddTask
-//                     isEditMode={true}
-//                     taskData={taskToEdit}
-//                     visible={isEditOpen}
-//                     onHide={() => {
-//                         setIsEditOpen(false);
-//                         setTaskToEdit(null);
-//                     }}
-//                 />
-//             )}
-//         </div>
-//     );
-// };
-
-// const columnStyle = (bgColor) => ({
-//     flex: '1', backgroundColor: bgColor, minHeight: '80vh', borderRadius: '20px',
-//     display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '25px',
-//     boxShadow: '0 4px 6px rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.03)'
-// });
-
-// const labelStyle = { marginTop: '15px', fontWeight: 'bold', fontSize: '1.1rem', color: '#333' };
-
-// export default DetailsProject;
-
-
-
-
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -431,7 +7,7 @@ import AddTask from '../Components/AddTask';
 import AddItemToTask from './AddItemToTask';
 import { deleteProject } from './store/projectSlice';
 
-/* ===== COLUMN CONFIGS ===== */
+
 const COLUMNS = [
   {
     key: 'done',
@@ -544,7 +120,7 @@ const DetailsProject = () => {
         zIndex: 0,
       }} />
 
-      {/* ===== HEADER ===== */}
+  
       <div style={{
         width: '100%',
         background: 'var(--bg-card)',
@@ -558,7 +134,7 @@ const DetailsProject = () => {
         zIndex: 10,
         height: '68px',
       }}>
-        {/* Top shimmer line */}
+       
         <div style={{
           position: 'absolute',
           top: 0, left: 0, right: 0,
@@ -566,7 +142,7 @@ const DetailsProject = () => {
           background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent)',
         }} />
 
-        {/* Right: Title + meta */}
+       
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <div style={{
             width: 36, height: 36, borderRadius: '10px',
@@ -597,7 +173,7 @@ const DetailsProject = () => {
           </div>
         </div>
 
-        {/* Left: Action buttons */}
+   
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
           <button
             onClick={() => navigate('/AllProject')}
@@ -650,7 +226,7 @@ const DetailsProject = () => {
         </div>
       </div>
 
-      {/* ===== KANBAN BOARD ===== */}
+  
       <div style={{
         display: 'flex',
         width: '100%',
@@ -663,7 +239,7 @@ const DetailsProject = () => {
       }}>
         {COLUMNS.map((col) => (
           <div key={col.key} style={columnStyle(col)}>
-            {/* Column Header */}
+           
             <div style={{
               width: '100%',
               display: 'flex',
@@ -703,10 +279,10 @@ const DetailsProject = () => {
               </div>
             </div>
 
-            {/* Add Task Button */}
+       
             <AddTask />
 
-            {/* Task Cards */}
+       
             <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}>
               {project.tasks?.[col.key]?.map((task) => (
                 <AddItemToTask
@@ -735,7 +311,7 @@ const DetailsProject = () => {
   );
 };
 
-/* ===== HELPERS ===== */
+
 function hexToRgb(hex) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result

@@ -1,76 +1,6 @@
-/* :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
 
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ===== CSS VARIABLES ===== */
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #0f0f17;
@@ -110,7 +40,7 @@ button:focus-visible {
   color-scheme: dark;
 }
 
-/* ===== RESET ===== */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -132,7 +62,7 @@ html, body {
   text-align: right;
 }
 
-/* ===== SCROLLBAR ===== */
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -148,7 +78,7 @@ html, body {
   background: var(--accent-primary);
 }
 
-/* ===== NOISE TEXTURE OVERLAY ===== */
+
 body::before {
   content: '';
   position: fixed;
@@ -159,7 +89,6 @@ body::before {
   opacity: 0.4;
 }
 
-/* ===== MUI OVERRIDES ===== */
 .MuiPaper-root, .MuiCard-root {
   background-color: var(--bg-card) !important;
   border: 1px solid var(--border-subtle) !important;
@@ -294,7 +223,6 @@ body::before {
   border-top: 1px solid var(--border-subtle) !important;
 }
 
-/* Dialog */
 .p-dialog {
   background: var(--bg-card) !important;
   border: 1px solid var(--border-medium) !important;
@@ -340,7 +268,6 @@ body::before {
   background: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* InputText / Textarea */
 .p-inputtext, .p-inputtextarea {
   background: rgba(255, 255, 255, 0.04) !important;
   border: 1px solid var(--border-medium) !important;
@@ -360,7 +287,6 @@ body::before {
   color: var(--text-muted) !important;
 }
 
-/* Dropdown */
 .p-dropdown {
   background: rgba(255, 255, 255, 0.04) !important;
   border: 1px solid var(--border-medium) !important;
@@ -399,7 +325,7 @@ body::before {
   color: var(--accent-primary) !important;
 }
 
-/* Calendar */
+
 .p-calendar .p-inputtext {
   background: rgba(255, 255, 255, 0.04) !important;
 }
@@ -429,7 +355,7 @@ body::before {
   color: white !important;
 }
 
-/* Buttons */
+
 .p-button {
   font-family: 'Heebo', sans-serif !important;
   border-radius: var(--radius-sm) !important;
@@ -468,7 +394,6 @@ body::before {
   background: transparent !important;
 }
 
-/* Badge */
 .p-badge {
   font-family: 'Heebo', sans-serif !important;
   font-weight: 600 !important;
@@ -476,13 +401,11 @@ body::before {
   border-radius: 6px !important;
 }
 
-/* Snackbar */
 .MuiSnackbar-root .MuiAlert-root {
   font-family: 'Heebo', sans-serif !important;
   border-radius: var(--radius-md) !important;
 }
 
-/* Labels in forms */
 label.block {
   color: var(--text-secondary) !important;
   font-family: 'Heebo', sans-serif !important;
@@ -491,13 +414,11 @@ label.block {
   letter-spacing: 0.03em !important;
 }
 
-/* Form error */
 .p-error {
   color: var(--accent-red) !important;
   font-family: 'Heebo', sans-serif !important;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
